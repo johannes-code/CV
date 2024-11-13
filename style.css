@@ -1,0 +1,51 @@
+/** Ligh/Darkmode */
+
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+/** HEADER */
+
+header {
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+  padding: 12px;
+  background-color: antiquewhite;
+}
+
+header a {
+}
+
+/** NAVBAR */
+
+nav {
+  background-color: rgb(222, 199, 169);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  align-items: center;
+  
+}
+
+nav img {
+  height: 40px;
+  width: auto;
+  
+}
+nav a {
+  font-size: 20px;
+  
+}
