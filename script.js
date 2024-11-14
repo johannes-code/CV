@@ -1,3 +1,6 @@
+const themeIcon = document.getElementById("themeicon")
+
+
 //gjør h1 elementet til tittel på siden
 //sjekker om vi er på riktig side
 document.addEventListener("DOMContentLoaded", function(){
@@ -10,7 +13,7 @@ if (homePage) {
         }
     }
 })
-
+//======================================================================//
 //cardlogic
 function createCard(Title, id){
     let open = false;
@@ -43,3 +46,19 @@ divcontainer.append(
 }
 createCard("My Card Title", "cardContainer");
 renderAllCards()
+
+//===============================================================================================//
+//Choose the dark or lightpath
+
+function themeSwitcher() {
+    document.body.classList.toggle("light");
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("light")) {
+        themeIcon.src = "icon/mode-light.svg"
+
+    } else {
+        themeIcon.src = "icon/mode-dark.svg"
+    }
+}
+
