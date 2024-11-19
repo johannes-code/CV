@@ -1,3 +1,6 @@
+
+const divcontainer = document.getElementById("divcontainer");
+console.log(divcontainer)
 // const themeIcon = document.getElementById("themeicon")
 
 
@@ -21,29 +24,31 @@ function createCard(Title, id){
 function toggle() {
     return open ? false: true;
 }
-function render() {
+function render(title) {
     const container = document.getElementById(id);
 
-container.innerHTML = <div class="card">
+container.innerHTML = `<div class="card">
 <h2>${title}</h2>
 <p class="content" style="display: ${open ? 'block' : 'none'}">
   
 </p>
 <button>${open ? 'Close' : 'Open'}</button>
-</div>
+</div>`
+
 container.querySelector("button").addEventListener("click"())
 }
 render()
 }
 
 function renderAllCards() {
-    return
+    return(
 divcontainer.append(
+    render("Kontaktinformasjon"),
     createCard("Jobberfaring", "unik id"),
     createCard("Jobberfaring", "unik id2"),
     createCard("Jobberfaring", "unik id3"),
     createCard("Jobberfaring", "unik id4"))
-}
+)}
 createCard("My Card Title", "cardContainer");
 renderAllCards()
 
@@ -71,13 +76,14 @@ function themeSwitcher() {
 document.addEventListener("DOMContentLoaded", function() {
     const themeToggle = document.querySelector('.settings a:first-child');
     
+    console.log(themeToggle)
     themeToggle.addEventListener('click', function(e) {
         e.preventDefault();
         themeSwitcher();
     });
 
     // Sett initial tilstand basert på brukerens preferanse
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia || window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add("dark");
         themeSwitcher();
     } else {
