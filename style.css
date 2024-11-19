@@ -1,4 +1,15 @@
 /** Darkside or lightside */
+#themeIcon_light {
+  display: none;
+}
+
+#themeIcon_dark {
+  display: inline;
+}
+
+body.dark #themeIcon_dark {
+  display: none;
+}
 
 body.light {
   color: black;

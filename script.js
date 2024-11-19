@@ -1,4 +1,4 @@
-const themeIcon = document.getElementById("themeicon")
+// const themeIcon = document.getElementById("themeicon")
 
 
 //gjør h1 elementet til tittel på siden
@@ -54,11 +54,35 @@ function themeSwitcher() {
     document.body.classList.toggle("light");
     document.body.classList.toggle("dark");
 
+    const themeIcon_light = document.getElementById('themeicon_light');
+    const themeIcon_dark = document.getElementById('themeicon_dark');
+
     if (document.body.classList.contains("light")) {
-        themeIcon.src = "icon/mode-light.svg"
+        themeIcon_light.style.display = "none";
+        themeIcon_dark.style.display = "inline";
 
     } else {
-        themeIcon.src = "icon/mode-dark.svg"
+        themeIcon_light.style.display = "inline";
+        themeIcon_dark.style.display = "none";
     }
+  
 }
+//eventlistener som registrerer når knappen trykkes
+document.addEventListener("DOMContentLoaded", function() {
+    const themeToggle = document.querySelector('.settings a:first-child');
+    
+    themeToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        themeSwitcher();
+    });
 
+    // Sett initial tilstand basert på brukerens preferanse
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add("dark");
+        themeSwitcher();
+    } else {
+        document.body.classList.add("light");
+    }
+});
+
+// =================================================================
