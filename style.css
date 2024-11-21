@@ -19,7 +19,6 @@ body.light {
 body.dark {
   color: white;
   background-color: black;
-  
 }
 
 button {
@@ -35,7 +34,6 @@ header {
   gap: 8px;
   justify-content: end;
   padding: 12px;
-  background-color: antiquewhite;
 }
 
 header a {
@@ -44,7 +42,6 @@ header a {
 /** NAVBAR */
 
 nav {
-  background-color: rgb(222, 199, 169);
   display: flex;
   justify-content: space-between;
   padding: 12px 24px;

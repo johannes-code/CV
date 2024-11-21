@@ -96,3 +96,44 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // =================================================================
+//Language Selector
+document.addEventListener("DOMContentLoaded", function() {
+    const langToggle = document.getElementById('langToggle');
+    const langIcon_norwegian = document.getElementById('langicon_norwegian');
+    const langIcon_us = document.getElementById('langicon_us');
+//TODO fungerer ikke, ikon navn?
+
+    function langSwitcher() {
+        document.body.classList.toggle("norwegian");
+        document.body.classList.toggle("us");
+  
+        if (document.body.classList.contains("norwegian")) {
+            langIcon_norwegian.style.display = "inline";
+            langIcon_us.style.display = "none";
+        } else {
+            langIcon_norwegian.style.display = "none";
+            langIcon_us.style.display = "inline";
+        }
+  
+    }
+    if (langToggle) {
+        langToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            langSwitcher();
+            console.log("lang switched");
+        });
+    } else {
+        console.error("lang toggle button not found");
+    }
+
+    // // Sett initial tilstand basert på brukerens preferanse
+    // if (window.matchMedia || window.matchMedia('(perfers-Language: us)').matches) {
+    //     document.body.classList.add("us");
+    //     langIcon_norwegian.style.display = "none";
+    //     langIcon_us.style.display = "inline";
+    // } else {
+    //     document.body.classList.add("norwegian");
+    //     langIcon_norwegian.style.display = "inline";
+    //     langIcon_us.style.display = "none";
+    // }
+});
