@@ -139,3 +139,12 @@ document.addEventListener("DOMContentLoaded", function() {
         langIcon_us.style.display = "none";
     
 });
+
+//========================================================
+//formslogikk
+function submit_form(){  
+    alert("Informasjon registrert");  
+    }  
+    function create(){  
+    window.location="signup.html";  
+    }  
