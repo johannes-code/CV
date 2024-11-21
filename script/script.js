@@ -65,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.toggle("dark");
   
         if (document.body.classList.contains("light")) {
-            themeIcon_light.style.display = "inline";
-            themeIcon_dark.style.display = "none";
-        } else {
             themeIcon_light.style.display = "none";
             themeIcon_dark.style.display = "inline";
+        } else {
+            themeIcon_light.style.display = "inline";
+            themeIcon_dark.style.display = "none";
         }
   
     }
@@ -77,6 +77,12 @@ document.addEventListener("DOMContentLoaded", function() {
         themeToggle.addEventListener('click', function(e) {
             e.preventDefault();
             themeSwitcher();
+            if (document.body.classList.contains("dark"))
+                {
+                    langIcon_us.classList.add("invert");
+                } else {
+                    langIcon_us.classList.remove("invert");
+            }
             console.log("Theme switched");
         });
     } else {
@@ -99,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //Language Selector
 document.addEventListener("DOMContentLoaded", function() {
     const langToggle = document.getElementById('langToggle');
-    const langIcon_norwegian = document.getElementById('langicon_norwegian');
-    const langIcon_us = document.getElementById('langicon_us');
+    const langIcon_norwegian = document.getElementById('langIcon_norwegian');
+    const langIcon_us = document.getElementById('langIcon_us');
 //TODO fungerer ikke, ikon navn?
 
     function langSwitcher() {
@@ -114,26 +120,22 @@ document.addEventListener("DOMContentLoaded", function() {
             langIcon_norwegian.style.display = "none";
             langIcon_us.style.display = "inline";
         }
-  
+                 
     }
     if (langToggle) {
         langToggle.addEventListener('click', function(e) {
             e.preventDefault();
             langSwitcher();
-            console.log("lang switched");
+            console.log("language switched");
         });
     } else {
-        console.error("lang toggle button not found");
+        console.error("language toggle button not found");
     }
 
-    // // Sett initial tilstand basert på brukerens preferanse
-    // if (window.matchMedia || window.matchMedia('(perfers-Language: us)').matches) {
-    //     document.body.classList.add("us");
-    //     langIcon_norwegian.style.display = "none";
-    //     langIcon_us.style.display = "inline";
-    // } else {
-    //     document.body.classList.add("norwegian");
-    //     langIcon_norwegian.style.display = "inline";
-    //     langIcon_us.style.display = "none";
-    // }
+     // Sett initial tilstand basert på brukerens preferanse
+ 
+        document.body.classList.add("norwegian");
+        langIcon_norwegian.style.display = "inline";
+        langIcon_us.style.display = "none";
+    
 });

@@ -1,0 +1,29 @@
+/** HEADER */
+
+header {
+    display: flex;
+    gap: 8px;
+    justify-content: end;
+    padding: 12px;
+  }
+  
+  header a {
+  }
+  
+  /** NAVBAR */
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+    align-items: center;
+  }
+  
+  nav img {
+    height: 40px;
+    width: auto;
+  }
+  nav a {
+    font-size: 20px;
+  }
+  
