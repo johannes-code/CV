@@ -1,27 +1,45 @@
 /** Darkside or lightside */
 #themeIcon_light {
-    display: none;
-  }
-  
-  #themeIcon_dark {
-    display: inline;
-  }
-  
-  body.dark #themeIcon_dark {
-    display: none;
-  }
-  
-  body.light {
-    color: black;
-    background-color: rgb(238, 245, 251);
-  }
-  
-  body.dark {
-    color: white;
-    background-color: black;
-  }
+  display: none;
+}
+
+#themeIcon_dark {
+  display: inline;
+}
+
+body.dark #themeIcon_dark {
+  display: none;
+}
+
+body.light {
+  --bg: #000000ff;
+  --txt: #fdfff7ff;
+  --secondary: #aa4465ff;
+  --primary: #274690ff;
+
+  --grey: #35363f;
+  --greyTransparent: #7d7f8bb3;
+}
+
+body.dark {
+  --txt: #000000ff;
+  --bg: #fdfff7ff;
+  --primary: #aa4465ff;
+  --secondary: #274690ff;
+
+  --grey: #bcbccd;
+  --greyTransparent: #bcbccd5a;
+}
+
+body {
+  /*cororscheme: */
+  color: var(--bg);
+  background-color: var(--txt);
+
+  --raspberry-rose: #aa4465ff;
+  --marian-blue: #274690ff;
+}
 
 .invert {
-    filter: invert();
-  }
-  
+  filter: invert();
+}
