@@ -148,3 +148,19 @@ function submit_form(){
     function create(){  
     window.location="signup.html";  
     }  
+
+//========================================================
+//bdate logikk
+document.getElementById('bdate').addEventListener('focus', function() {
+    if (!this.value) {
+        this.type = 'text';
+        this.value = "Fødselsdato";
+    }
+})
+
+document.getElementById('bdate').addEventListener('blur', function() {
+    if (this.value === 'Fødselsdato') {
+        this.type = 'date';
+        this.value = '';
+    }
+})

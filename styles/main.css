@@ -4,5 +4,22 @@
 @import "./form.css";
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+}
+
+
+
+card {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  display: flex;
 }
