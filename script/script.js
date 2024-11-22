@@ -171,5 +171,7 @@ async function handleForåndsvisning(event){
         console.error("En feil oppstod:", err);
 
     }
+
 }
+
 

@@ -1,0 +1,34 @@
+<h2>Fyll inn Kontaktinfo</h2>
+<form id="userForm">
+    <input type="text" name="navn" placeholder="Navn" id="name">
+    <input type="text" name="adresse" placeholder="Adresse" id="adresse">
+    <input type="text" name="telefon" placeholder="Telefon" id="telefon">
+    <input type="text" name="epost" placeholder="Epost" id="mail">
+    <input type="date" name="fødselsdato" placeholder="Fødselsdato" id="bdate">
+    <button type="button" id="forhandsvisKnapp">Forhåndsvis</button>
+</form>
+
+java:::
+window.addEventListener("load", function(event) {
+    const form = document.getElementById("userForm");
+    const forhandsvisKnapp = document.getElementById("forhandsvisKnapp");
+    forhandsvisKnapp.addEventListener("click", handleForhandsvisning);
+});
+
+async function handleForhandsvisning(event) {
+    try {
+        event.preventDefault();
+        const form = document.getElementById("userForm");
+        const formData = new FormData(form);
+        const data = {
+            navn: formData.get("navn"),
+            adresse: formData.get("adresse"),
+            telefon: formData.get("telefon"),
+            epost: formData.get("epost"),
+            fødselsdato: formData.get("fødselsdato")
+        };
+        console.log(data);
+    } catch(err) {
+        console.error("En feil oppstod:", err);
+    }
+}
