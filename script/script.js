@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const langToggle = document.getElementById('langToggle');
     const langIcon_norwegian = document.getElementById('langIcon_norwegian');
     const langIcon_us = document.getElementById('langIcon_us');
-//TODO fungerer ikke, ikon navn?
 
     function langSwitcher() {
         document.body.classList.toggle("norwegian");
@@ -142,25 +141,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //========================================================
 //formslogikk
-function submit_form(){  
-    alert("Informasjon registrert");  
-    }  
-    function create(){  
-    window.location="signup.html";  
-    }  
+
+window.addEventListener("load", function(event){
+    const form = document.getElementById("form");
+    form.addEventListener("Forhåndsvis", handleForåndsvisning);
+    
+})
+
 
 //========================================================
-//bdate logikk
-document.getElementById('bdate').addEventListener('focus', function() {
-    if (!this.value) {
-        this.type = 'text';
-        this.value = "Fødselsdato";
-    }
-})
+//handleForhåndsvisninglogikk
+async function handleForåndsvisning(event){
+    try {
+        event.preventDefault();
+        const form = document.getElementById("userForm");
+        const formData = new FormData(form);
+        const epost = formData.get("epost");
+        const fødselsdato = formData.get("fødselsdato");
+        const data = {epost, fødselsdato};
+        console.log(data);
+    }   
+    catch(err){
+        console.error("En feil oppstod:", err);
 
-document.getElementById('bdate').addEventListener('blur', function() {
-    if (this.value === 'Fødselsdato') {
-        this.type = 'date';
-        this.value = '';
     }
-})
+}

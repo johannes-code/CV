@@ -1,6 +1,8 @@
 input {
   border-radius: 8px;
   padding: 8px;
+  width: 500px;
+  min-height: 35px;
 }
 
 input:hover {
@@ -12,5 +14,15 @@ input:focus {
 }
 
 input[placeholder] {
+}
 
+input[type="date"]:before {
+  content: attr(placeholder) !important;
+  color: #aaa;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
 }
