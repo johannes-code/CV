@@ -142,23 +142,29 @@ document.addEventListener("DOMContentLoaded", function() {
 //========================================================
 //formslogikk
 
-window.addEventListener("load", function(event){
-    const form = document.getElementById("form");
-    form.addEventListener("Forhåndsvis", handleForåndsvisning);
-    
-})
+// window.addEventListener( "load", function(){
+//     const form = document.getElementById("contactForm");
+//     const forhandsvisKnapp = document.getElementById("forhandsvisningKnapp");
+//     forhandsvisKnapp.addEventListener("click", handleForåndsvisning);
+// });
 
-
+    const form = document.getElementById("contactForm");
+    const forhandsvisKnapp = document.getElementById("forhandsvisningKnapp");
+    forhandsvisKnapp.addEventListener("click", handleForåndsvisning);
 //========================================================
 //handleForhåndsvisninglogikk
 async function handleForåndsvisning(event){
     try {
         event.preventDefault();
-        const form = document.getElementById("userForm");
+        // const form = document.getElementById("contactForm");
         const formData = new FormData(form);
-        const epost = formData.get("epost");
-        const fødselsdato = formData.get("fødselsdato");
-        const data = {epost, fødselsdato};
+        const data = {
+            navn:       formData.get("navn"),
+            adresse:    formData.get("adresse"),
+            telefon:    formData.get("telefon"),
+            epost:      formData.get("epost"),
+            fødseldato: formData.get("fødselsdato")
+        };
         console.log(data);
     }   
     catch(err){

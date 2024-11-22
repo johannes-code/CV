@@ -66,25 +66,24 @@
           <div class="form">
             <h2>Fyll inn Kontaktinfo</h2>
             <p class="content">
-             <form>
+             <form id="contactForm">
+              
               <input type="text" name="navn" placeholder="Navn" id="name">
-             </form>
-             <form>
+              <br>        
               <input type="text" name="adresse" placeholder="Adresse" id="adresse">
-             </form>
-             <form>
+              <br>
               <input type="text" name="telefon" placeholder="Telefon" id="telefon">
-             </form>
-             <form>
+              <br>
               <input type="text" name="epost" placeholder="Epost" id="mail">
-             </form>
-             <form>
+              <br>
               <input type="date" name="fødselsdato" placeholder="Fødselsdato" id="bdate"> 
-             </form>
-              <!--TODO knappen skal alltid være synlig, forhåndsvisning av CV-->
+              <br>
               <div>
-                <input type="button" value="Forhåndsvisning">
-              </div>
+              <button id="forhandsvisningKnapp" value="Forhåndsvisning">Forhåndsvisning</button>
+              </div>  
+            </form>
+              <!--TODO knappen skal alltid være synlig, forhåndsvisning av CV-->
+              
             </div>
         </div>
         <div id="cardContainer">
