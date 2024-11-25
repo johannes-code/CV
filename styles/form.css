@@ -31,10 +31,7 @@ textarea {
   box-sizing: border-box;
 }
 
-.poststed {
+.post {
   display: flex;
-}
-
-.poststed input {
-  width: 50%;
+  width: 100%;
 }

@@ -1,158 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
-    <script defer src="script/script.js"> </script>
-    <!-- Title er navnet på den som omhandles --> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="script/script.js"></script>
+    <!-- Title er navnet på den som omhandles -->
     <title>Document</title>
-</head>
-  <body>
-    <div>
-        <header>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition- 
-           property">
-         
-        <nav>
-          <div class="navmenu">
-		         <a href="#">kontaktinfo</a>
-             <a href="#">utdanning</a>
-             <a href="#">arbeidserfaring</a>
-             <a href="#">prosjekter</a>
-             <a href="#">kurs</a>
-             <a href="#">referanser</a>
-          </div>
+  </head>
 
-          <div class="settings">
-            <a href="#" id="themeToggle">
-              <!-- Light mode icon -->
-              <img id="themeicon_light" 
-              src="icon/mode-light.svg" 
+  <body>
+    <header>
+      <nav>
+        <div class="navmenu">
+          <a href="#">kontaktinfo</a>
+          <a href="#">utdanning</a>
+          <a href="#">arbeidserfaring</a>
+          <a href="#">prosjekter</a>
+          <a href="#">kurs</a>
+          <a href="#">referanser</a>
+        </div>
+
+        <div class="settings">
+          <a href="#" id="themeToggle">
+            <!-- Light mode icon -->
+            <img
+              id="themeicon_light"
+              src="icon/mode-light.svg"
               alt="Light mode"
-              media="(prefers-color-scheme: light)">
-              <!-- Dark mode icon -->
-              <img id="themeicon_dark" 
-              src="icon/mode-dark.svg" 
+              media="(prefers-color-scheme: light)"
+            />
+            <!-- Dark mode icon -->
+            <img
+              id="themeicon_dark"
+              src="icon/mode-dark.svg"
               alt="Dark mode"
-              media="(prefers-color-scheme: dark)">
-            </a>
-            <a href="#" id="langToggle">
-                <!-- norwegian icon -->
-              <img id="langIcon_norwegian" 
+              media="(prefers-color-scheme: dark)"
+            />
+          </a>
+          <a href="#" id="langToggle">
+            <!-- norwegian icon -->
+            <img
+              id="langIcon_norwegian"
               src="icon/norwegian.svg"
-              alt="Norwegian">              
-              <!-- us mode icon -->
-              <img id="langIcon_us"
-              src="icon/us.svg"
-              alt="English">              
-              </a>
-              <a href="#"><img src="icon/printer-svgrepo-com.svg"></a>
-              <!-- printefunksjon med valg for hva som skal printes -->
-          </div>
-          </div>
-        </nav>
-    </div>
-  
-    <!--Overskrift og paragraf for hver av kategoriene -->
-    <!--Oppsummering se kun hvilken skole/arbeidsplass og fra til dato, Utvidet: se mer beskrivelse av hva som ble gjort, hvilke arbeidsoppgavers om ble utført-->
-    <!--Tomme cards skal skjules-->    
+              alt="Norwegian"
+            />
+            <!-- us mode icon -->
+            <img id="langIcon_us" src="icon/us.svg" alt="English" />
+          </a>
+          <a href="#"><img src="icon/printer-svgrepo-com.svg" alt="Print" /></a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
     <main>
       <h1 id="text"></h1>
       <div class="bodyContainer">
         <div id="formContainer">
           <div class="form">
             <h2>Fyll inn Kontaktinfo</h2>
-            <p class="content">
-             <form id="contactForm" onsubmit="handleForhåndsvisning(event)">
-              
-              <input type="text" name="navn" required placeholder="Navn" id="name">
-              <br>        
-              <input type="text" name="adresse" placeholder="Adresse" id="adresse">
-              <br>
-              <div class="poststed">
-                <input type="text" required name="postnummer" placeholder="Postnummer" id="postnummer">
-                <input type="text" required name="poststed" placeholder="Poststed" id="poststed">
-              </div>  
-                            
-              <input type="tel" required pattern="[0-9]{8}" name="telefon" placeholder="Telefon" id="telefon">
-              <br>
-              <input type="email" required name="epost" placeholder="Epost" id="mail">
-              <br>
-              <input type="date" required name="fødselsdato" placeholder="Fødselsdato" id="bdate"> 
-              <br>
-              <div>
-                <button type="submit" id="forhandsvisningKnapp">Forhåndsvisning</button>
-              </div>  
-            </form>
-              <!--TODO knappen skal alltid være synlig, forhåndsvisning av CV-->
-              
-            </div>
-        </div>
-        <div id="cardContainer">
-          <div class="card">
-            <p class="kontaktinfo">
-              <div id="output"></div>
+            <form id="contactForm" onsubmit="handleForhåndsvisning(event)">
+              <input
+                type="text"
+                name="navn"
+                required
+                placeholder="Navn"
+                id="name"
+              /><br />
+              <input
+                type="text"
+                name="adresse"
+                placeholder="Adresse"
+                id="adresse"
+              /><br />
+              <div class="post">
+                <div style="flex-grow: 1">
+                  <input
+                    type="text"
+                    required
+                    name="postnummer"
+                    placeholder="Postnummer"
+                    id="postnummer"
+                  />
+                </div>
+                <div style="flex-grow: 2">
+                  <input
+                    type="text"
+                    required
+                    name="poststed"
+                    placeholder="Poststed"
+                    id="poststed"
+                  />
+                </div>
               </div>
-            </div>
-  
-        
-        
-        
-        <div id="divcontainer">
-
+              <input
+                type="tel"
+                required
+                pattern="[0-9]{8}"
+                name="telefon"
+                placeholder="Telefon"
+                id="telefon"
+              /><br />
+              <input
+                type="email"
+                required
+                name="epost"
+                placeholder="Epost"
+                id="mail"
+              /><br />
+              <input
+                type="date"
+                required
+                name="fødselsdato"
+                placeholder="Fødselsdato"
+                id="bdate"
+              /><br />
+              <div>
+                <button type="submit" id="forhandsvisningKnapp">
+                  Forhåndsvisning
+                </button>
+              </div>
+            </form>
           </div>
-
-<!--         
-        <div id="Utdanning">
-          <div class="card">
-            <h2>Utdanning</h2>
-            <p class="content">
-              
-            </p>
-            <button>Open</button>
-          </div>
-          </p>
         </div>
-        
-        <div id="Arbeidserfaring">
-          <div class="card">
-            <h2>Arbeidserfaring</h2>
-          <p class="content">
 
-          </p>
-          <button>Open</button>
+        <!-- Card Container -->
+        <div id="cardContainer">
+          <!-- Example card for contact information -->
+          <!-- Additional cards can be added here -->
         </div>
-        
-        <div id="Prosjekter">
-        <div class="card">
-          <h2>Prosjekter</h2>
-          <p class="content">
 
-          </p>
-          <button>Open</button>
-        </div>
-        
-        <div id="Kurs">
-        <div class="card">
-          <h2>Kurs</h2>
-          <p class="content">
-
-          </p>
-          <button>Open</button>
-        </div>
-        
-        <div id="Referanser">
-        <div class="card">
-          <h2>Referanser</h2>  
-          <p class="content">
-
-          </p>
-          <button>Open</button>
-        
-        </div>   -->
+        <!-- Placeholder for additional sections like Utdanning, Arbeidserfaring, etc. -->
       </div>
     </main>
   </body>
