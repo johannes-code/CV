@@ -1,7 +1,11 @@
+form {
+  width: 500px;
+}
+
 input {
   border-radius: 8px;
   padding: 8px;
-  width: 500px;
+  width: 100%;
   min-height: 35px;
 }
 
@@ -25,4 +29,12 @@ input[type="date"]:before {
 textarea {
   width: 100%;
   box-sizing: border-box;
+}
+
+.poststed {
+  display: flex;
+}
+
+.poststed input {
+  width: 50%;
 }

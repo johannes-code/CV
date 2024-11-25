@@ -3,6 +3,9 @@
 @import "./button.css;";
 @import "./form.css";
 
+* {
+  box-sizing: border-box;
+}
 a {
   text-decoration: none;
 }

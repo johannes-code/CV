@@ -153,6 +153,8 @@ async function handleForhåndsvisning(event){
         const data = {
             navn:       formData.get("navn"),
             adresse:    formData.get("adresse"),
+            postnummer: formData.get("postnummer"),
+            poststed:   formData.get("poststed"),
             telefon:    formData.get("telefon"),
             epost:      formData.get("epost"),
             fødseldato: formData.get("fødselsdato")
@@ -171,9 +173,11 @@ function visDataPåSkjerm(data) {
     const outputElement = document.getElementById("output");
     if (outputElement) {
         outputElement.innerHTML = `
-        <h2>Forhåndsvisning: </h2>
+        <h2>Kontaktinformasjon: </h2>
         <p><strong>Navn: </strong>${data.navn}</p>
         <p><strong>Adresse: </strong>${data.adresse}</p>
+        <p><strong>Postnummer: </strong>${data.postnummer}
+            <strong>Poststed: </strong>$data.poststed}</p>
         <p><strong>Telefon: </strong>${data.telefon}</p>
         <p><strong>Epost: </strong>${data.epost}</p>
         <p><strong>Fødselsdato: </strong>${data.fødselsdato}</p>

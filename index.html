@@ -68,15 +68,20 @@
             <p class="content">
              <form id="contactForm" onsubmit="handleForhåndsvisning(event)">
               
-              <input type="text" name="navn" placeholder="Navn" id="name">
+              <input type="text" name="navn" required placeholder="Navn" id="name">
               <br>        
               <input type="text" name="adresse" placeholder="Adresse" id="adresse">
               <br>
-              <input type="text" name="telefon" placeholder="Telefon" id="telefon">
+              <div class="poststed">
+                <input type="text" required name="postnummer" placeholder="Postnummer" id="postnummer">
+                <input type="text" required name="poststed" placeholder="Poststed" id="poststed">
+              </div>  
+                            
+              <input type="tel" required pattern="[0-9]{8}" name="telefon" placeholder="Telefon" id="telefon">
               <br>
-              <input type="text" name="epost" placeholder="Epost" id="mail">
+              <input type="email" required name="epost" placeholder="Epost" id="mail">
               <br>
-              <input type="date" name="fødselsdato" placeholder="Fødselsdato" id="bdate"> 
+              <input type="date" required name="fødselsdato" placeholder="Fødselsdato" id="bdate"> 
               <br>
               <div>
                 <button type="submit" id="forhandsvisningKnapp">Forhåndsvisning</button>
@@ -88,7 +93,6 @@
         </div>
         <div id="cardContainer">
           <div class="card">
-            <h2>Kontaktinfo</h2>
             <p class="kontaktinfo">
               <div id="output"></div>
               </div>
