@@ -140,23 +140,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //========================================================
-//formslogikk
-
-// window.addEventListener( "load", function(){
-//     const form = document.getElementById("contactForm");
-//     const forhandsvisKnapp = document.getElementById("forhandsvisningKnapp");
-//     forhandsvisKnapp.addEventListener("click", handleForåndsvisning);
-// });
 
     const form = document.getElementById("contactForm");
     const forhandsvisKnapp = document.getElementById("forhandsvisningKnapp");
-    forhandsvisKnapp.addEventListener("click", handleForåndsvisning);
+    form.addEventListener("submit", handleForhåndsvisning);
 //========================================================
 //handleForhåndsvisninglogikk
-async function handleForåndsvisning(event){
+async function handleForhåndsvisning(event){
     try {
         event.preventDefault();
-        // const form = document.getElementById("contactForm");
         const formData = new FormData(form);
         const data = {
             navn:       formData.get("navn"),
@@ -166,12 +158,30 @@ async function handleForåndsvisning(event){
             fødseldato: formData.get("fødselsdato")
         };
         console.log(data);
+        visDataPåSkjerm(data);
     }   
     catch(err){
         console.error("En feil oppstod:", err);
 
     }
-
+    
 }
+
+function visDataPåSkjerm(data) {
+    const outputElement = document.getElementById("output");
+    if (outputElement) {
+        outputElement.innerHTML = `
+        <h2>Forhåndsvisning: </h2>
+        <p><strong>Navn: </strong>${data.navn}</p>
+        <p><strong>Adresse: </strong>${data.adresse}</p>
+        <p><strong>Telefon: </strong>${data.telefon}</p>
+        <p><strong>Epost: </strong>${data.epost}</p>
+        <p><strong>Fødselsdato: </strong>${data.fødselsdato}</p>
+    `;
+    } else {
+        console.error("Fant ikke output elementet");
+    }
+}
+
 
 

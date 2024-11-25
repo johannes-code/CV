@@ -66,7 +66,7 @@
           <div class="form">
             <h2>Fyll inn Kontaktinfo</h2>
             <p class="content">
-             <form id="contactForm">
+             <form id="contactForm" onsubmit="handleForhåndsvisning(event)">
               
               <input type="text" name="navn" placeholder="Navn" id="name">
               <br>        
@@ -79,7 +79,7 @@
               <input type="date" name="fødselsdato" placeholder="Fødselsdato" id="bdate"> 
               <br>
               <div>
-              <button id="forhandsvisningKnapp" value="Forhåndsvisning">Forhåndsvisning</button>
+                <button type="submit" id="forhandsvisningKnapp">Forhåndsvisning</button>
               </div>  
             </form>
               <!--TODO knappen skal alltid være synlig, forhåndsvisning av CV-->
@@ -90,7 +90,7 @@
           <div class="card">
             <h2>Kontaktinfo</h2>
             <p class="kontaktinfo">
-            
+              <div id="output"></div>
               </div>
             </div>
   
